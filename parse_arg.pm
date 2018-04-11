@@ -6,22 +6,8 @@ sub help {
 USAGE
 	./110borwein n
 DESCRIPTION
-	n constant defining the integral to be computed
+	n	constant defining the integral to be computed
 END_HELP
-}
-
-sub is_integer {
-	my ($arg) = @_;
-	my $i = 0;
-
-	if (substr($arg, 0, 1) eq "-") {
-		$arg = substr($arg, 1, length($arg) - 1);
-	}
-	if (!($arg =~ /^[0-9]+$/)) {
-		print STDERR "Invalid argument: '@_'\n";
-		return 0;
-	}
-	return 1;
 }
 
 sub parse_arg {
@@ -37,7 +23,8 @@ sub parse_arg {
 		help();
 		exit(0);
 	}
-	elsif (!is_integer($ARGV[0])) {
+	elsif (!($ARGV[0] =~ /^[0-9]+$/)) {
+		print STDERR "Invalid argument: '@_'\n";
 		return 84;
 	}
 	return (0);

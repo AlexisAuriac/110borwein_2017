@@ -3,7 +3,14 @@
 use strict;
 use warnings;
 use parse_arg;
+use borwein;
 
 if (parse_arg() == 84) {
 	exit(84);
 }
+
+rectangles();
+print "\n";
+trapezoids();
+print "\n";
+simpson();
