@@ -1,2 +1,6 @@
 *~
 *#*
+
+# sublime-text
+*.sublime-project
+*.sublime-workspace
